@@ -11,10 +11,12 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "npm run start:css && react-scripts start",
+    "build": "npm run build:css && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "start:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
+    "build:css": "postcss src/styles/tailwind.css -o src/styles/main.css --env production"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +32,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.6.2"
   }
 }
