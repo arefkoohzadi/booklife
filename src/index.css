@@ -1,10 +1,41 @@
 @font-face {
-  font-family: "BYekan";
-  src: url("./assets/fonts/BYekan-webfont.eot") format("eot"),
-    url("./assets/fonts/BYekan-webfont.woff") format("woff"),
-    url("./assets/fonts/BYekan-webfont.ttf") format("truetype");
-  font-weight: normal;
+  font-family: IRANSans;
+  src: url("./assets/fonts/IRANSansWeb.woff2") format("woff2");
   font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IRANSansMedium;
+  src: url("./assets/fonts/IRANSansWeb_Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IRANSansBold;
+  src: url("./assets/fonts/IRANSansWeb_Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IRANSansFaNum;
+  src: url("./assets/fonts/IRANSansWebFaNum.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: IRANSansFaNumMedium;
+  src: url("./assets/fonts/IRANSansWebFaNumMedium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
 }
 
 body {
