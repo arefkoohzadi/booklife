@@ -2,6 +2,10 @@ module.exports = {
   purge: false,
   theme: {
     extend: {
+      colors: {
+        primary: "#F4F1EA",
+        secondary: "#f9f7f4",
+      },
       fontFamily: {
         IRANSans: ["IRANSans"],
         IRANSansMedium: ["IRANSansMedium"],
@@ -14,6 +18,8 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    textColor: ["responsive", "hover", "focus", "group-hover"],
+  },
   plugins: [],
 };
