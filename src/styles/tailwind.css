@@ -1,9 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@responsive {
-  .bg-gradient-brand {
-    background-image: linear-gradient(to bottom, #dbd7d1, #edebe9);
-  }
-}

@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Logo = (props) => {
   return (
-    <div className="flex items-center ml-3 sm:h-full group cursor-pointer my-auto">
+    <Link
+      to="/"
+      className="flex items-center ml-3 sm:h-full group cursor-pointer my-auto"
+    >
       <svg
         className="h-10 w-10 ml-1 fill-current text-teal-800 transition ease-in duration-300 group-hover:text-teal-600"
         xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +17,7 @@ const Logo = (props) => {
       <p className="font-IRANSansMedium select-none text-lg tracking-tighter text-teal-800 transition ease-in duration-300 group-hover:text-teal-600">
         کتاب خوان
       </p>
-    </div>
+    </Link>
   );
 };
 

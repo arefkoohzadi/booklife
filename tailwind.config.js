@@ -15,11 +15,13 @@ module.exports = {
       },
       boxShadow: {
         "outline-grey": "0 0 0 3px rgba(226, 232, 240, 0.5)",
+        "outline-blue": "0 0 0 3px rgba(190, 227, 248, 0.5)",
       },
     },
   },
   variants: {
     textColor: ["responsive", "hover", "focus", "group-hover"],
+    display: ["responsive", "hover", "focus", "group-hover"],
   },
   plugins: [],
 };
