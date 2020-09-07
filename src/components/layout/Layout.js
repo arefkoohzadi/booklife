@@ -9,9 +9,11 @@ const Layout = (props) => {
   const handleBackdrop = () => {
     setOpenSideDrawer(false);
   };
+
   const sideDrawerToggle = () => {
     setOpenSideDrawer((prevState) => !prevState);
   };
+
   return (
     <>
       <Toolbar sideDrawerToggle={sideDrawerToggle} />

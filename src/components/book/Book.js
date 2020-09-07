@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import DropDown from "../common/DropDown";
 import Details from "../common/Details";
 import DescriptionTruncate from "./DescriptionTruncate";
+import Follow from "../Follow";
 
 const Book = (props) => {
   const books = useSelector((state) => state.book.books);
@@ -58,14 +59,15 @@ const Book = (props) => {
                 </Link>
               }
             />
-            <div className="flex mt-2 w-full">
+            <div className="flex mt-2 w-full items-center">
               <img
                 className="w-20 h-20 rounded-full ml-3"
                 src={authorPreson.imageUrl}
                 alt={authorPreson.name}
               />
               <div>
-                <p>{authorPreson.name}</p>
+                <p className="mb-1">{authorPreson.name}</p>
+                <Follow authorId={authorPreson.id} />
               </div>
             </div>
             <DescriptionTruncate description={authorPreson.description} />

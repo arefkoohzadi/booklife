@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Details from "../common/Details";
 import ListAutorBook from "./ListAutorBook";
+import Follow from "../Follow";
 
 const Author = (props) => {
   const authors = useSelector((state) => state.author.authors);
@@ -20,6 +21,9 @@ const Author = (props) => {
               src={author.imageUrl}
               alt={author.name}
             />
+            <div className="w-full flex justify-center mt-2">
+              <Follow authorId={author.id} />
+            </div>
           </div>
           <div className="w-9/12 h-full px-8 pt-2">
             <Details title={author.name} />
