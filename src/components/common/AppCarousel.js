@@ -5,7 +5,7 @@ import Cover from "../../assets/images/cover.gif";
 
 const AppCarousel = (props) => {
   return (
-    <div className="mx-auto w-4/5 rounded-lg overflow-hidden">
+    <div className="mx-auto w-full rounded-lg overflow-hidden">
       <Carousel
         rtl
         keepDirectionWhenDragging

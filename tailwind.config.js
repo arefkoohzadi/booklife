@@ -22,6 +22,7 @@ module.exports = {
   variants: {
     textColor: ["responsive", "hover", "focus", "group-hover"],
     display: ["responsive", "hover", "focus", "group-hover"],
+    margin: ["responsive", "hover", "focus", "first"],
   },
   plugins: [],
 };

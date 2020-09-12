@@ -1,6 +1,16 @@
 import axios from "../../api/axios-books";
 
 export const FETCH_BOOKS = "FETCH_BOOKS";
+export const ADD_STATUS = "ADD_STATUS";
+
+export const addStatus = (bookId, userId, item) => {
+  return {
+    type: ADD_STATUS,
+    bookId,
+    userId,
+    item,
+  };
+};
 
 export const fetchBooks = () => {
   return async (dispatch) => {

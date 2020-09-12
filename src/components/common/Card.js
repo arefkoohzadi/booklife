@@ -33,7 +33,7 @@ const Card = ({ title, image, author, id }) => {
             )}
           </p>
           <div className="mt-2">
-            <DropDown />
+            <DropDown bookId={id} />
           </div>
         </div>
       </div>

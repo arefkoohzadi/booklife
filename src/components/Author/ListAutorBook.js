@@ -24,7 +24,7 @@ const ListAutorBook = ({ book }) => {
               </Link>
 
               <p className="mt-2">
-                نویسنده:{" "}
+                <span className="hidden md:inline">نویسنده: </span>
                 <span className="text-gray-900 tracking-tighter">
                   {book.author}
                 </span>
@@ -33,7 +33,7 @@ const ListAutorBook = ({ book }) => {
           </div>
         </div>
         <div className="my-2 py-2 px-2">
-          <DropDown />
+          <DropDown bookId={book.id} />
         </div>
       </div>
       <hr className="border-t border-gray-400" />

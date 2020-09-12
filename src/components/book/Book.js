@@ -12,13 +12,13 @@ const Book = (props) => {
   const authors = useSelector((state) => state.author.authors);
   const authorPreson = authors.find((ath) => ath.name === book.author);
   return (
-    <div className="flex pt-4">
-      <div className="flex w-9/12">
+    <div className="md:flex pt-4">
+      <div className="flex w-full lg:w-9/12 md:w-7/12">
         <div className="w-full my-2 py-2 pl-2">
           {book && (
             <div className="flex">
               <img
-                className="ml-2 h-auto rounded w-32"
+                className="ml-2 h-48 rounded w-32"
                 src={book.imageUrl}
                 alt={book.title}
               />
@@ -38,15 +38,25 @@ const Book = (props) => {
                     </Link>
                   )}
                 </p>
-                <div className="mt-2">
-                  <DropDown />
+                <div className="my-2">
+                  <DropDown bookId={book.id} />
+                </div>
+                <span className="font-IRANSansFaNum text-sm ml-4">
+                  {book.pages} صفحه
+                </span>
+                <span className="text-sm">انتشارات: {book.publisher}</span>
+                <div className="w-full lg:w-1/3 md:w-2/3">
+                  <DescriptionTruncate
+                    description={book.description}
+                    number={80}
+                  />
                 </div>
               </div>
             </div>
           )}
         </div>
       </div>
-      <div className="w-3/12">
+      <div className="w-full lg:w-3/12 md:w-5/12">
         {authorPreson && (
           <div>
             <Details
@@ -59,7 +69,7 @@ const Book = (props) => {
                 </Link>
               }
             />
-            <div className="flex mt-2 w-full items-center">
+            <div className="flex mb-2 md:mb-0 mt-2 w-full items-center">
               <img
                 className="w-20 h-20 rounded-full ml-3"
                 src={authorPreson.imageUrl}
@@ -70,7 +80,10 @@ const Book = (props) => {
                 <Follow authorId={authorPreson.id} />
               </div>
             </div>
-            <DescriptionTruncate description={authorPreson.description} />
+            <DescriptionTruncate
+              description={authorPreson.description}
+              number={200}
+            />
           </div>
         )}
       </div>

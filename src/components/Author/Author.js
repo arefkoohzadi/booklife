@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import Details from "../common/Details";
 import ListAutorBook from "./ListAutorBook";
 import Follow from "../Follow";
+import Followers from "./Followers";
 
 const Author = (props) => {
   const authors = useSelector((state) => state.author.authors);
@@ -11,21 +12,29 @@ const Author = (props) => {
   const authorBooks = author
     ? books.filter((book) => book.author === author.name)
     : null;
+  const numberOfFollowers =
+    author && author.followers ? Object.keys(author.followers).length : null;
   return (
     <>
       {author && (
-        <div className="flex mt-2">
-          <div className="w-3/12 flex-1 rounded-lg pt-2 px-8">
+        <div className="sm:flex mt-2">
+          <div className="w-full sm:w-3/12 flex-1 rounded-lg pt-2 px-8 sm:px-1 lg:px-8">
             <img
-              className="w-48 h-48 rounded-lg mx-auto"
+              className="w-48 h-48 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-lg mx-auto"
               src={author.imageUrl}
               alt={author.name}
             />
             <div className="w-full flex justify-center mt-2">
               <Follow authorId={author.id} />
             </div>
+            <div className="w-full flex justify-center mt-2">
+              <Followers
+                numberOfFollowers={numberOfFollowers}
+                title="دنبال‌کننده"
+              />
+            </div>
           </div>
-          <div className="w-9/12 h-full px-8 pt-2">
+          <div className="w-full sm:w-9/12 h-full px-8 pt-2">
             <Details title={author.name} />
             <div>
               <span className="block text-gray-700 my-2 text-justify">

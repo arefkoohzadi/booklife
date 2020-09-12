@@ -1,10 +1,32 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import httpRequest from "../../api/axios-books";
+import { addStatus } from "../../store/actions/book";
+import useStatus from "../../hooks/useStatus";
 
-const DropDown = (props) => {
+const DropDown = ({ bookId }) => {
+  const userId = useSelector((state) => state.auth.userId);
+  const token = useSelector((state) => state.auth.token);
+  const books = useSelector((state) => state.book.books);
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const dispatch = useDispatch();
+  const status = useStatus(bookId, userId);
+
   const selectHandler = (item) => {
-    setSelectedItem(item);
+    const book = books.find((book) => book.id === bookId);
+    const url = `/books/${bookId}/.json?auth=${token}`;
+    const data = {
+      status: { ...book.status, [userId]: item },
+    };
+
+    httpRequest
+      .patch(url, data)
+      .then((res) => {
+        dispatch(addStatus(bookId, userId, item));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     setIsOpen(false);
   };
 
@@ -29,7 +51,7 @@ const DropDown = (props) => {
           </svg>
         </span>
         <span className="font-IRANSans text-sm">
-          {!!selectedItem ? selectedItem : "تغییر وضعیت"}
+          {!!status ? status : "تغییر وضعیت"}
         </span>
       </button>
       {isOpen && (
