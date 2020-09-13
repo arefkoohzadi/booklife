@@ -13,7 +13,7 @@ const BestBook = ({ numberOfReader, bestBookId }) => {
   return (
     <div className="flex mt-2">
       <img
-        className="w-40 h-40 ml-2 cursor-pointer"
+        className="w-40 h-40 ml-2 cursor-pointer rounded-lg"
         src={book.imageUrl}
         onClick={() => history.push("/book/" + book.id)}
         alt=""

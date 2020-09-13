@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppForm, AppFormField, SubmitButton } from ".";
 import * as Yup from "yup";
 import { auth } from "../../store/actions/auth";
+import { Helmet } from "react-helmet";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -69,8 +70,15 @@ const Register = (props) => {
     authRedirect = <Redirect to="/" />;
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <Helmet>
+        <title>کتاب خوان | ثبت نام در سایت</title>
+      </Helmet>
       {authRedirect}
       <div className="max-w-md w-full">
         <div>

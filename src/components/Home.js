@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Card from "./common/Card";
 import AppCarousel from "./common/AppCarousel";
@@ -17,6 +17,10 @@ const Home = (props) => {
   const booksReading = useReading();
   const [maxNumber, bestAuthorId] = useBestAuthor();
   const [maxNumberOfReader, bestBookId] = useBestBook();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="flex w-full h-full">
