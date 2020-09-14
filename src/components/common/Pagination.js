@@ -17,7 +17,9 @@ const Pagination = ({ itemCount, pageSize, onPageChange, currentPage }) => {
                   : "text-teal-500 border-teal-500"
               }  text-xs font-semibold bg-white font-IRANSansFaNum flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid cursor-pointer`}
               onClick={
-                currentPage !== 1 && (() => onPageChange(currentPage - 1))
+                currentPage !== 1
+                  ? () => onPageChange(currentPage - 1)
+                  : undefined
               }
             >
               <svg
@@ -58,8 +60,9 @@ const Pagination = ({ itemCount, pageSize, onPageChange, currentPage }) => {
                   : "text-teal-500 border-teal-500"
               } bg-white text-xs font-semibold font-IRANSansFaNum flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid cursor-pointer`}
               onClick={
-                currentPage !== pageCount &&
-                (() => onPageChange(currentPage + 1))
+                currentPage !== pageCount
+                  ? () => onPageChange(currentPage + 1)
+                  : undefined
               }
             >
               <svg

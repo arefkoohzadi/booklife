@@ -6,6 +6,7 @@ const NavigationItems = (props) => {
     <ul className="sm:flex h-full items-center">
       <NavigationItem link="/">خانه</NavigationItem>
       <NavigationItem link="/my-books">کتاب‌های من</NavigationItem>
+      <NavigationItem link="/cv">درباره‌ی ما</NavigationItem>
     </ul>
   );
 };

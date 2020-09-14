@@ -15,16 +15,15 @@ const AllBook = ({ books }) => {
   return (
     <>
       {paginateBooks.map((book) => (
-        <>
+        <React.Fragment key={book.id}>
           <Card
-            key={book.id}
             id={book.id}
             title={book.title}
             image={book.imageUrl}
             author={book.author}
           />
           <hr className="border-t border-gray-300 mt-1" />
-        </>
+        </React.Fragment>
       ))}
       <Pagination
         itemCount={books.length}
