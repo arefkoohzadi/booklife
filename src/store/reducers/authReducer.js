@@ -4,6 +4,7 @@ import {
   AUTH_FAIL,
   AUTH_LOGOUT,
 } from "../actions/auth";
+
 const initialState = {
   token: null,
   userId: null,

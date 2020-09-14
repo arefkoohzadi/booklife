@@ -3,6 +3,7 @@ import Toolbar from "../Toolbar";
 import SideDrawer from "../SideDrawer";
 import Footer from "../Footer";
 import { Helmet } from "react-helmet";
+import ProgressBar from "../common/ProgressBar";
 
 const Layout = (props) => {
   const [openSideDrawer, setOpenSideDrawer] = useState(true);
@@ -23,6 +24,7 @@ const Layout = (props) => {
         <Helmet>
           <title>کتاب خوان</title>
         </Helmet>
+        <ProgressBar />
         {props.children}
       </main>
       <Footer />

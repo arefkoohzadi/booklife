@@ -17,6 +17,15 @@ module.exports = {
         "outline-grey": "0 0 0 3px rgba(226, 232, 240, 0.5)",
         "outline-blue": "0 0 0 3px rgba(190, 227, 248, 0.5)",
       },
+      keyframes: {
+        progress: {
+          "0%": { left: "-50%" },
+          "100%": { left: "100%" },
+        },
+      },
+      animation: {
+        progress: "progress 2s linear infinite",
+      },
     },
   },
   variants: {
