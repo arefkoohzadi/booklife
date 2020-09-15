@@ -3,7 +3,7 @@ import { range } from "../../utility/range";
 
 const Pagination = ({ itemCount, pageSize, onPageChange, currentPage }) => {
   const pageCount = Math.ceil(itemCount / pageSize);
-  if (pageCount === 1) return null;
+  if (pageCount <= 1) return null;
   const pages = range(pageCount, 1);
   return (
     <div className="py-2 flex justify-center">
