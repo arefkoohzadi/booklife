@@ -1,4 +1,4 @@
-import { FETCH_BOOKS, ADD_STATUS } from "../actions/book";
+import { FETCH_BOOKS, ADD_STATUS, DELETE_STATUS } from "../actions/book";
 
 const initialState = {
   books: [],
@@ -28,6 +28,24 @@ export default (state = initialState, action) => {
       cloneBooksStatus.splice(bookIndex, 1, updateBook);
 
       return { ...state, books: [...cloneBooksStatus] };
+    case DELETE_STATUS:
+      const bookForDelete = state.books.find(
+        (book) => book.id === action.bookId
+      );
+      const statusForDelete = { ...bookForDelete.status };
+      delete statusForDelete[action.userId];
+      const updateBookForDelete = {
+        ...bookForDelete,
+        status: statusForDelete,
+      };
+
+      const bookIndexDelete = state.books.findIndex(
+        (book) => book.id === action.bookId
+      );
+      const cloneBooksStatusDelete = [...state.books];
+
+      cloneBooksStatusDelete.splice(bookIndexDelete, 1, updateBookForDelete);
+      return { ...state, books: [...cloneBooksStatusDelete] };
     default:
       return state;
   }

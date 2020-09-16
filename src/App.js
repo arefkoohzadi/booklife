@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Layout from "./components/layout/Layout";
 import Login from "./components/form/LoginForm";
@@ -14,6 +14,8 @@ import { fetchAuthors } from "./store/actions/author";
 import { authCheckState } from "./store/actions/auth";
 import CreateAuthor from "./components/form/CreateAuthor";
 import Logout from "./components/Logout";
+import MyBooks from "./components/MyBook/MyBooks";
+import NotFound from "./components/not-found/NotFound";
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -40,9 +42,12 @@ const App = (props) => {
           <Route path="/createbook" component={CreateBook} />
           <Route path="/createauthor" component={CreateAuthor} />
           <Route path="/cv" component={Cv} />
+          <Route path="/my-books" component={MyBooks} />
           <Route path="/book/:id" component={Book} />
           <Route path="/author/:id" component={Author} />
+          <Route path="/not-found" component={NotFound} />
           <Route path="/" exact component={Home} />
+          <Redirect to="/not-found" />
         </Switch>
       </Layout>
     </>

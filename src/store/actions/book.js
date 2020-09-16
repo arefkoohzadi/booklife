@@ -2,6 +2,15 @@ import axios from "../../api/axios-books";
 
 export const FETCH_BOOKS = "FETCH_BOOKS";
 export const ADD_STATUS = "ADD_STATUS";
+export const DELETE_STATUS = "DELETE_STATUS";
+
+export const deleteStatus = (bookId, userId) => {
+  return {
+    type: DELETE_STATUS,
+    bookId,
+    userId,
+  };
+};
 
 export const addStatus = (bookId, userId, item) => {
   return {

@@ -75,22 +75,25 @@ export const auth = (email, password, isSignup) => {
 };
 
 export const authCheckState = (params) => {
-  return async (dispatch) => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      dispatch(authLogout());
-    } else {
-      const expirationDate = new Date(localStorage.getItem("expirationDate"));
-      if (expirationDate <= new Date()) {
+  return async (dispatch, getState) => {
+    const { auth } = getState();
+    if (!auth.token) {
+      const token = localStorage.getItem("token");
+      if (!token) {
         dispatch(authLogout());
       } else {
-        const userId = localStorage.getItem("userId");
-        dispatch(authSuccess(token, userId));
-        dispatch(
-          checkAuthTimeout(
-            (expirationDate.getTime() - new Date().getTime()) / 1000
-          )
-        );
+        const expirationDate = new Date(localStorage.getItem("expirationDate"));
+        if (expirationDate <= new Date()) {
+          dispatch(authLogout());
+        } else {
+          const userId = localStorage.getItem("userId");
+          dispatch(authSuccess(token, userId));
+          dispatch(
+            checkAuthTimeout(
+              (expirationDate.getTime() - new Date().getTime()) / 1000
+            )
+          );
+        }
       }
     }
   };

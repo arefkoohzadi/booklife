@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import DropDown from "../common/DropDown";
 import Details from "../common/Details";
-import DescriptionTruncate from "./DescriptionTruncate";
+import DescriptionTruncate from "../common/DescriptionTruncate";
 import Follow from "../Follow";
 import { Helmet } from "react-helmet";
 
