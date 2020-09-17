@@ -5,7 +5,7 @@ import AppCarousel from "./common/AppCarousel";
 import useReading from "../hooks/useReading";
 import Details from "./common/Details";
 import useBestAuthor from "../hooks/useBestAuthor";
-import BestAuthor from "./Author/BestAuthor";
+import BestAuthor from "./author/BestAuthor";
 import useBestBook from "../hooks/useBestBook";
 import BestBook from "./book/BestBook";
 import { Link } from "react-router-dom";

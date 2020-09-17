@@ -23,24 +23,34 @@ const NumberStatus = (props) => {
   return (
     <>
       <h1 className="font-IRANSansMedium text-gray-800 text-lg">قفسه کتاب</h1>
-      <h2 className="text-gray-700">
-        همه{" "}
-        <span className="font-IRANSansFaNum text-gray-700">({allMyBooks})</span>
-      </h2>
-      <h2 className="text-gray-700">
-        خوانده{" "}
-        <span className="font-IRANSansFaNum text-gray-700">({read})</span>
-      </h2>
-      <h2 className="text-gray-700">
-        در حال خواندن{" "}
-        <span className="font-IRANSansFaNum text-gray-700">
-          ({currentReading})
-        </span>
-      </h2>
-      <h2 className="text-gray-700">
-        در لیست خواندن{" "}
-        <span className="font-IRANSansFaNum text-gray-700">({willRead})</span>
-      </h2>
+      <div className="flex md:flex-col">
+        <div className="ml-3 md:ml-0">
+          <h2 className="text-gray-700">
+            همه{" "}
+            <span className="font-IRANSansFaNum text-gray-700">
+              ({allMyBooks})
+            </span>
+          </h2>
+          <h2 className="text-gray-700">
+            خوانده{" "}
+            <span className="font-IRANSansFaNum text-gray-700">({read})</span>
+          </h2>
+        </div>
+        <div>
+          <h2 className="text-gray-700">
+            در حال خواندن{" "}
+            <span className="font-IRANSansFaNum text-gray-700">
+              ({currentReading})
+            </span>
+          </h2>
+          <h2 className="text-gray-700">
+            در لیست خواندن{" "}
+            <span className="font-IRANSansFaNum text-gray-700">
+              ({willRead})
+            </span>
+          </h2>
+        </div>
+      </div>
     </>
   );
 };

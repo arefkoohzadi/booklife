@@ -16,25 +16,25 @@ const BookTable = (props) => {
   };
 
   return (
-    <div className="container mx-auto sm:px-8">
-      <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-        <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
-          <table className="min-w-full leading-normal table-fixed">
+    <div class="container mx-auto">
+      <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+        <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+          <table class="min-w-full leading-normal table-fixed">
             <thead>
               <tr>
                 <th className="px-5 py-3 border-b-2 w-16 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
                   تصویر
                 </th>
-                <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
+                <th className="pl-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
                   عنوان
                 </th>
-                <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
+                <th className="pl-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
                   نویسنده
                 </th>
-                <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
+                <th className="pl-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
                   وضعیت
                 </th>
-                <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
+                <th className="pl-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
                   حذف
                 </th>
               </tr>
@@ -56,7 +56,7 @@ const BookTable = (props) => {
                       </div>
                     </div>
                   </td>
-                  <td className="px-5 py-5 border-b border-gray-200  text-sm">
+                  <td className="pl-5 py-5 border-b border-gray-200  text-sm">
                     <Link
                       to={`/book/${book.id}`}
                       className="text-gray-900 border-b border-transparent whitespace-no-wrap hover:border-gray-900"
@@ -64,7 +64,7 @@ const BookTable = (props) => {
                       {book.title}
                     </Link>
                   </td>
-                  <td className="px-5 py-5 border-b border-gray-200  text-sm">
+                  <td className="pl-5 py-5 border-b border-gray-200  text-sm">
                     <Link
                       to={`/author/${getAuthorId(book)}`}
                       className="text-gray-900 border-b border-transparent whitespace-no-wrap hover:border-gray-900"
@@ -72,10 +72,10 @@ const BookTable = (props) => {
                       {book.author}
                     </Link>
                   </td>
-                  <td className="px-5 py-5 border-b border-gray-200  text-sm">
+                  <td className="pl-5 py-5 border-b border-gray-200  text-sm">
                     <DropDown bookId={book.id} />
                   </td>
-                  <td className="px-5 py-5 border-b border-gray-200  text-sm">
+                  <td className="pl-5 py-5 border-b border-gray-200  text-sm">
                     <DeleteBook bookId={book.id} />
                   </td>
                 </tr>

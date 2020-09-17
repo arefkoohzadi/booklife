@@ -1,9 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
-const ProgressBar = (props) => {
-  const loading = useSelector((state) => state.auth.loading);
+
+const ProgressBar = ({ loading }) => {
   let progressBar = null;
-  if (loading) {
+  if (!!loading) {
     progressBar = (
       <div className="w-full -mt-3">
         <div className="w-full overflow-hidden">

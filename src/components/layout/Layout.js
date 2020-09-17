@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import Toolbar from "../Toolbar";
 import SideDrawer from "../SideDrawer";
 import Footer from "../Footer";
@@ -7,7 +8,7 @@ import ProgressBar from "../common/ProgressBar";
 
 const Layout = (props) => {
   const [openSideDrawer, setOpenSideDrawer] = useState(true);
-
+  const loading = useSelector((state) => state.auth.loading);
   const handleBackdrop = () => {
     setOpenSideDrawer(false);
   };
@@ -24,7 +25,7 @@ const Layout = (props) => {
         <Helmet>
           <title>کتاب خوان</title>
         </Helmet>
-        <ProgressBar />
+        <ProgressBar loading={loading} />
         {props.children}
       </main>
       <Footer />

@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import useAuthorIdWithBook from "../../hooks/useAuthorIdWithBook";
-import Followers from "../Author/Followers";
+import Followers from "../author/Followers";
 import DropDown from "../common/DropDown";
 const BestBook = ({ numberOfReader, bestBookId }) => {
   const history = useHistory();
