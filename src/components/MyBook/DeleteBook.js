@@ -1,23 +1,21 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteStatus } from "../../store/actions/book";
 import httpRequest from "../../api/axios-books";
 
 const DeleteBook = ({ bookId }) => {
-  const dispatch = useDispatch();
   const userId = useSelector((state) => state.auth.userId);
   const token = useSelector((state) => state.auth.token);
+  const dispatch = useDispatch();
 
   const url = `/books/${bookId}/status/${userId}.json?auth=${token}`;
-  const handleDelete = () => {
-    httpRequest
-      .delete(url)
-      .then((res) => {
-        dispatch(deleteStatus(bookId, userId));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const handleDelete = async () => {
+    try {
+      await httpRequest.delete(url);
+      dispatch(deleteStatus(bookId, userId));
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

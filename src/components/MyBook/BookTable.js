@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import useUserBooks from "../../hooks/useUserBooks";
 import DropDown from "../common/DropDown";
+import StarRating from "../common/StarRating";
 import DeleteBook from "./DeleteBook";
 
 const BookTable = (props) => {
@@ -14,12 +15,11 @@ const BookTable = (props) => {
     let author = authors.find((au) => au.name === book.author);
     return author ? author.id : null;
   };
-
   return (
-    <div class="container mx-auto">
-      <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-        <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-          <table class="min-w-full leading-normal table-fixed">
+    <div className="container mx-auto">
+      <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+        <div className="inline-block min-w-full shadow rounded-lg overflow-y-auto">
+          <table className="min-w-full leading-normal table-fixed">
             <thead>
               <tr>
                 <th className="px-5 py-3 border-b-2 w-16 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
@@ -30,6 +30,9 @@ const BookTable = (props) => {
                 </th>
                 <th className="pl-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
                   نویسنده
+                </th>
+                <th className="pl-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
+                  امتیاز
                 </th>
                 <th className="pl-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-right text-xs font-semibold font-IRANSans text-gray-600 uppercase tracking-wider">
                   وضعیت
@@ -73,6 +76,9 @@ const BookTable = (props) => {
                     </Link>
                   </td>
                   <td className="pl-5 py-5 border-b border-gray-200  text-sm">
+                    <StarRating bookId={book.id} />
+                  </td>
+                  <td className="pl-5 py-5 border-b border-gray-200 text-sm">
                     <DropDown bookId={book.id} />
                   </td>
                   <td className="pl-5 py-5 border-b border-gray-200  text-sm">

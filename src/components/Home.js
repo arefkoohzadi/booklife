@@ -13,6 +13,7 @@ import AllBook from "./book/AllBook";
 
 const Home = (props) => {
   const books = useSelector((state) => state.book.books);
+  const isAuth = !!useSelector((state) => state.auth.token);
 
   const booksReading = useReading();
   const [maxNumber, bestAuthorId] = useBestAuthor();
@@ -26,7 +27,7 @@ const Home = (props) => {
     <div className="flex w-full h-full">
       <div className="w-3/12 pt-4">
         <Details title="در حال خواندن" size="text-sm" />
-        {booksReading.length > 0 ? (
+        {isAuth && booksReading.length > 0 ? (
           booksReading.map((book) => (
             <Card
               key={book.id}
@@ -36,6 +37,10 @@ const Home = (props) => {
               author={book.author}
             />
           ))
+        ) : isAuth ? (
+          <p className="hover:text-teal-600 animate-pulse">
+            کتاب در حال خواندن در قفسه موجود نیست
+          </p>
         ) : (
           <Link to="/login" className="hover:text-teal-600 animate-pulse">
             برای مشاهده‌ی کتاب‌های در حال خواندن لطفا وارد حساب کاربری خود شوید

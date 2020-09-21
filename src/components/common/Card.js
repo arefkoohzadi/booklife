@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import DropDown from "./DropDown";
 import { truncate } from "../../utility/truncate";
+import StarRating from "./StarRating";
+import useRating from "../../hooks/useRating";
 
 const Card = ({ title, image, author, id }) => {
   const authors = useSelector((state) => state.author.authors);
@@ -32,6 +34,9 @@ const Card = ({ title, image, author, id }) => {
               </Link>
             )}
           </p>
+          <div className="my-4">
+            <StarRating bookId={id} />
+          </div>
           <div className="mt-2">
             <DropDown bookId={id} />
           </div>

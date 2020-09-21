@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DropDown from "../common/DropDown";
+import StarRating from "../common/StarRating";
 
 const ListAutorBook = ({ book }) => {
   return (
@@ -29,6 +30,9 @@ const ListAutorBook = ({ book }) => {
                   {book.author}
                 </span>
               </p>
+              <div className="mt-4">
+                <StarRating bookId={book.id} />
+              </div>
             </div>
           </div>
         </div>

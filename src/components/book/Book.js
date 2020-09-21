@@ -6,12 +6,15 @@ import Details from "../common/Details";
 import DescriptionTruncate from "../common/DescriptionTruncate";
 import Follow from "../Follow";
 import { Helmet } from "react-helmet";
+import StarRating from "../common/StarRating";
+import useRating from "../../hooks/useRating";
 
 const Book = (props) => {
   const books = useSelector((state) => state.book.books);
   const book = books.find((book) => book.id === props.match.params.id);
   const authors = useSelector((state) => state.author.authors);
   const authorPreson = authors.find((ath) => ath.name === book.author);
+  const rating = useRating(null, book);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -46,6 +49,9 @@ const Book = (props) => {
                       </Link>
                     )}
                   </p>
+                  <div className="my-4">
+                    <StarRating currentRating={rating} bookId={book.id} />
+                  </div>
                   <div className="my-2">
                     <DropDown bookId={book.id} />
                   </div>
