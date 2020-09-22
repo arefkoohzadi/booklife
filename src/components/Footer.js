@@ -5,13 +5,15 @@ const Footer = (props) => {
   return (
     <div className="w-full pt-2 pb-5 px-10 h-20 bg-primary flex justify-between focus:outline-none">
       <div>
-        <NavLink
-          activeStyle={{ color: "#e53e3e" }}
-          className="font-IRANSansMedium text-lg mb-3 text-teal-800 hover:text-teal-600"
-          to="/cv"
-        >
-          درباره ما
-        </NavLink>
+        <span className="text-teal-800 hover:text-teal-600">
+          <NavLink
+            activeClassName="text-red-600 hover:text-red-500"
+            className="font-IRANSansMedium text-lg mb-3"
+            to="/cv"
+          >
+            درباره ما
+          </NavLink>
+        </span>
       </div>
 
       <div>

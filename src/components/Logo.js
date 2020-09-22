@@ -5,7 +5,7 @@ const Logo = (props) => {
   return (
     <Link
       to="/"
-      className="flex items-center ml-3 sm:h-full group cursor-pointer my-auto"
+      className="flex items-center ml-0 sm:ml-3 sm:h-full group cursor-pointer my-auto"
     >
       <svg
         className="h-10 w-10 ml-1 fill-current text-teal-800 transition ease-in duration-300 group-hover:text-teal-600"

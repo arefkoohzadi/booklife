@@ -13,8 +13,8 @@ const Cv = (props) => {
       <Helmet>
         <title>رزومه‌ی عارف کوهزادی</title>
       </Helmet>
-      <div className="flex mt-2">
-        <div className="bg-primary w-3/12 flex-1 rounded-lg pt-2 px-8">
+      <div className="sm:flex mt-2">
+        <div className="bg-primary w-full sm:w-3/12 flex-1 rounded-lg py-2 px-8">
           <img className="w-32 h-32 rounded-full mx-auto" src={Image} alt="" />
           <h1 className="font-IRANSansMedium text-2xl text-gray-700 text-center pt-2 mb-10">
             عارف کوهزادی
@@ -48,7 +48,7 @@ const Cv = (props) => {
           <SubDetails subject="استان سکونت" details="مازندران" />
           <SubDetails subject="آدرس" details="ساری" />
         </div>
-        <div className="bg-secondary w-9/12 h-full px-8 pt-2">
+        <div className="bg-secondary w-full sm:w-9/12 h-full px-8 pt-2">
           <Details title="درباره‌ی من" />
           <div>
             <span className="block text-gray-700 my-2">

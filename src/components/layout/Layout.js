@@ -21,7 +21,7 @@ const Layout = (props) => {
     <>
       <Toolbar sideDrawerToggle={sideDrawerToggle} />
       <SideDrawer open={openSideDrawer} closed={handleBackdrop} />
-      <main className="py-12 min-h-screen px-10 bg-secondary w-full">
+      <main className="py-12 min-h-screen px-2 sm:px-4 lg:px-10 bg-secondary w-full">
         <Helmet>
           <title>کتاب خوان</title>
         </Helmet>

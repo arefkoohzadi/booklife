@@ -2,6 +2,7 @@ import React from "react";
 import NavigationItems from "./NavigationItems";
 import Logo from "./Logo";
 import Backdop from "./common/Backdop";
+import LoginRegisterLink from "./LoginRegisterLink";
 
 const SideDrawer = (props) => {
   let classes =
@@ -21,6 +22,9 @@ const SideDrawer = (props) => {
         <nav>
           <NavigationItems />
         </nav>
+        <div className="mt-4">
+          <LoginRegisterLink />
+        </div>
       </div>
     </div>
   );

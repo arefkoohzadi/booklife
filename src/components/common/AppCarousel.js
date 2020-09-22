@@ -5,7 +5,7 @@ import Cover from "../../assets/images/cover.gif";
 
 const AppCarousel = (props) => {
   return (
-    <div className="mx-auto w-full rounded-lg overflow-hidden">
+    <div className="mx-auto w-full rounded sm:rounded-lg overflow-hidden">
       <Carousel
         rtl
         keepDirectionWhenDragging
@@ -15,8 +15,8 @@ const AppCarousel = (props) => {
       >
         <img className="w-full" src={Cover} alt="papillon" />
         <div className="w-full h-full flex items-center justify-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-          <h1 className="text-5xl tracking-tighter select-none font-IRANSansBold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500">
-            کتاب زندگی ست
+          <h1 className="text-3xl sm:text-5xl sm:tracking-tighter select-none font-IRANSansBold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500">
+            کتاب زندگی‌ست
           </h1>
         </div>
       </Carousel>
