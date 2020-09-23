@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Logo = (props) => {
   return (
     <Link
+      onClick={props.backdrop ? props.backdrop : undefined}
       to="/"
       className="flex items-center ml-0 sm:ml-3 sm:h-full group cursor-pointer my-auto"
     >

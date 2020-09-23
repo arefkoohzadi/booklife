@@ -11,13 +11,18 @@ const LoginRegisterLink = (props) => {
         {!isAuth ? (
           <>
             <span className="text-teal-800 hover:text-teal-600">
-              <NavLink activeClassName="text-red-600" to="/login">
+              <NavLink
+                onClick={props.backdrop ? props.backdrop : undefined}
+                activeClassName="text-red-600"
+                to="/login"
+              >
                 ورود
               </NavLink>
             </span>{" "}
             |{" "}
             <span className="text-teal-800 hover:text-teal-600">
               <NavLink
+                onClick={props.backdrop ? props.backdrop : undefined}
                 activeClassName="text-red-600"
                 className="tracking-tighter"
                 to="/register"
@@ -28,6 +33,7 @@ const LoginRegisterLink = (props) => {
           </>
         ) : (
           <NavLink
+            onClick={props.backdrop ? props.backdrop : undefined}
             className="font-IRANSansMedium text-teal-800 hover:text-teal-600 tracking-tighter"
             to="/logout"
           >

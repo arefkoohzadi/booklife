@@ -18,12 +18,12 @@ const SideDrawer = (props) => {
     <div className="sm:hidden">
       <Backrdop show={props.open} clicked={props.closed} />
       <div className={classes}>
-        <Logo />
+        <Logo backdrop={props.closed} />
         <nav>
-          <NavigationItems />
+          <NavigationItems backdrop={props.closed} />
         </nav>
         <div className="mt-4">
-          <LoginRegisterLink />
+          <LoginRegisterLink backdrop={props.closed} />
         </div>
       </div>
     </div>
