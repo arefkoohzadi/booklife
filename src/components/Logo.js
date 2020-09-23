@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ModalSetStateContext } from "../context/modalProvider";
 
 const Logo = (props) => {
+  const backdrop = useContext(ModalSetStateContext);
   return (
     <Link
-      onClick={props.backdrop ? props.backdrop : undefined}
+      onClick={backdrop ? () => backdrop(false) : undefined}
       to="/"
       className="flex items-center ml-0 sm:ml-3 sm:h-full group cursor-pointer my-auto"
     >

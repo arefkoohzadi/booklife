@@ -5,22 +5,17 @@ import SideDrawer from "../SideDrawer";
 import Footer from "../Footer";
 import { Helmet } from "react-helmet";
 import ProgressBar from "../common/ProgressBar";
+import ModalProvider from "../../context/modalProvider";
 
 const Layout = (props) => {
-  const [openSideDrawer, setOpenSideDrawer] = useState(false);
   const loading = useSelector((state) => state.auth.loading);
-  const handleBackdrop = () => {
-    setOpenSideDrawer(false);
-  };
-
-  const sideDrawerToggle = () => {
-    setOpenSideDrawer((prevState) => !prevState);
-  };
 
   return (
     <>
-      <Toolbar sideDrawerToggle={sideDrawerToggle} />
-      <SideDrawer open={openSideDrawer} closed={handleBackdrop} />
+      <ModalProvider>
+        <Toolbar />
+        <SideDrawer />
+      </ModalProvider>
       <main className="py-12 min-h-screen px-2 sm:px-4 lg:px-10 bg-secondary w-full">
         <Helmet>
           <title>کتاب خوان</title>

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { ModalSetStateContext } from "../context/modalProvider";
 
 const LoginRegisterLink = (props) => {
+  const backdrop = useContext(ModalSetStateContext);
   const isAuth = !!useSelector((state) => state.auth.token);
 
   return (
@@ -12,7 +14,7 @@ const LoginRegisterLink = (props) => {
           <>
             <span className="text-teal-800 hover:text-teal-600">
               <NavLink
-                onClick={props.backdrop ? props.backdrop : undefined}
+                onClick={backdrop ? () => backdrop(false) : undefined}
                 activeClassName="text-red-600"
                 to="/login"
               >
@@ -22,7 +24,7 @@ const LoginRegisterLink = (props) => {
             |{" "}
             <span className="text-teal-800 hover:text-teal-600">
               <NavLink
-                onClick={props.backdrop ? props.backdrop : undefined}
+                onClick={backdrop ? () => backdrop(false) : undefined}
                 activeClassName="text-red-600"
                 className="tracking-tighter"
                 to="/register"
@@ -33,7 +35,7 @@ const LoginRegisterLink = (props) => {
           </>
         ) : (
           <NavLink
-            onClick={props.backdrop ? props.backdrop : undefined}
+            onClick={backdrop ? () => backdrop(false) : undefined}
             className="font-IRANSansMedium text-teal-800 hover:text-teal-600 tracking-tighter"
             to="/logout"
           >

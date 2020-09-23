@@ -6,17 +6,9 @@ const NavigationItems = (props) => {
   const isAuth = !!useSelector((state) => state.auth.token);
   return (
     <ul className="sm:flex h-full items-center">
-      <NavigationItem backdrop={props.backdrop} link="/">
-        خانه
-      </NavigationItem>
-      {isAuth && (
-        <NavigationItem backdrop={props.backdrop} link="/my-books">
-          کتاب‌های من
-        </NavigationItem>
-      )}
-      <NavigationItem backdrop={props.backdrop} link="/cv">
-        درباره‌ی ما
-      </NavigationItem>
+      <NavigationItem link="/">خانه</NavigationItem>
+      {isAuth && <NavigationItem link="/my-books">کتاب‌های من</NavigationItem>}
+      <NavigationItem link="/cv">درباره‌ی ما</NavigationItem>
     </ul>
   );
 };

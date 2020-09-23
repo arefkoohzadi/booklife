@@ -10,7 +10,7 @@ const Toolbar = (props) => {
       <nav className="h-full hidden sm:flex">
         <NavigationItems />
       </nav>
-      <DrawerToggle clicked={props.sideDrawerToggle} />
+      <DrawerToggle />
       <span className="hidden sm:block">
         <LoginRegisterLink />
       </span>

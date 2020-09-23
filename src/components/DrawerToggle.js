@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ModalSetStateContext } from "../context/modalProvider";
 
 const DrawerToggle = (props) => {
+  const toggleModal = useContext(ModalSetStateContext);
   return (
     <svg
-      onClick={props.clicked}
+      onClick={() => toggleModal((prevState) => !prevState)}
       className="h-6 w-6 fill-current text-teal-800 sm:hidden cursor-pointer"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
