@@ -3,8 +3,10 @@ import { Link, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppForm, AppFormField, SubmitButton } from ".";
 import * as Yup from "yup";
-import { auth } from "../../store/actions/auth";
+import { auth, authErorToNull } from "../../store/actions/auth";
 import { Helmet } from "react-helmet";
+import Alert from "../Alert";
+import { errorMessage } from "../../utility/errorMessage";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -20,6 +22,7 @@ const validationSchema = Yup.object().shape({
 const Login = (props) => {
   const loading = useSelector((state) => state.auth.loading);
   const isAuth = !!useSelector((state) => state.auth.token);
+  const error = useSelector((state) => state.auth.error);
 
   const dispatch = useDispatch();
 
@@ -71,6 +74,10 @@ const Login = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const closeHandler = () => {
+    dispatch(authErorToNull());
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -127,6 +134,14 @@ const Login = (props) => {
           </AppForm>
         </div>
       </div>
+      {!!error && (
+        <Alert
+          subject="خطای ورود"
+          description={errorMessage(error.message)}
+          okTitle="باشد!"
+          close={closeHandler}
+        />
+      )}
     </div>
   );
 };

@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 import ProgressBar from "../common/ProgressBar";
 
 const Layout = (props) => {
-  const [openSideDrawer, setOpenSideDrawer] = useState(true);
+  const [openSideDrawer, setOpenSideDrawer] = useState(false);
   const loading = useSelector((state) => state.auth.loading);
   const handleBackdrop = () => {
     setOpenSideDrawer(false);

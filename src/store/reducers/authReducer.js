@@ -3,6 +3,7 @@ import {
   AUTH_START,
   AUTH_FAIL,
   AUTH_LOGOUT,
+  AUTH_ERROR_TO_NULL,
 } from "../actions/auth";
 
 const initialState = {
@@ -26,6 +27,8 @@ export default (state = initialState, action) => {
       };
     case AUTH_FAIL:
       return { ...state, error: action.error, loading: false };
+    case AUTH_ERROR_TO_NULL:
+      return { ...state, error: null };
     case AUTH_LOGOUT:
       return { ...state, token: null, userId: null };
 

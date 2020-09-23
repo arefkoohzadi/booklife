@@ -6,7 +6,7 @@ import StarRating from "../common/StarRating";
 const ListAutorBook = ({ book }) => {
   return (
     <>
-      <div className="flex w-full justify-between items-center">
+      <div className="flex flex-col sm:flex-row w-full sm:justify-between sm:items-center">
         <div className="my-2 py-2 px-2">
           <div className="flex">
             <Link to={"/book/" + book.id}>
@@ -33,10 +33,13 @@ const ListAutorBook = ({ book }) => {
               <div className="mt-4">
                 <StarRating bookId={book.id} />
               </div>
+              <div className="mt-4 sm:hidden">
+                <DropDown bookId={book.id} />
+              </div>
             </div>
           </div>
         </div>
-        <div className="my-2 py-2 px-2">
+        <div className="my-2 py-2 px-2 hidden sm:flex">
           <DropDown bookId={book.id} />
         </div>
       </div>

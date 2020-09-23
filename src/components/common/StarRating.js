@@ -3,8 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { range } from "../../utility/range";
 import { updateRating } from "../../store/actions/book";
 import useRating from "../../hooks/useRating";
+import Alert from "../Alert";
 
 const StarRating = ({ length = 5, bookId }) => {
+  const [authRequire, setAuthRequire] = useState(null);
   const currentRating = useRating(bookId);
   const dispatch = useDispatch();
   const [ratingHover, setRatingHover] = useState(currentRating);
@@ -16,7 +18,14 @@ const StarRating = ({ length = 5, bookId }) => {
   const mouseLeaveHandler = () => {
     setRatingHover(currentRating);
   };
+  const handleClose = () => {
+    setAuthRequire(false);
+  };
   const handlerClick = (num) => {
+    if (!token) {
+      setAuthRequire(true);
+      return;
+    }
     dispatch(updateRating(num, url, userId, bookId, currentRating));
   };
   return (
@@ -41,6 +50,16 @@ const StarRating = ({ length = 5, bookId }) => {
             <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
           </svg>
         ))}
+        {!!authRequire && (
+          <Alert
+            cancelTitle="انصراف"
+            okTitle="ورود"
+            okLink="/login"
+            subject="وارد حسابتان شوید"
+            description="برای فعالیت در سایت باید وارد حساب کاربری خود بشوید!"
+            close={handleClose}
+          />
+        )}
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ const AppForm = ({ initialValues, onSubmit, validationSchema, children }) => {
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >
-      {() => <React.Fragment>{children}</React.Fragment>}
+      {() => <form>{children}</form>}
     </Formik>
   );
 };

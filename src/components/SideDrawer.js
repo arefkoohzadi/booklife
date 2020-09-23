@@ -1,7 +1,7 @@
 import React from "react";
 import NavigationItems from "./NavigationItems";
 import Logo from "./Logo";
-import Backdop from "./common/Backdop";
+import Backrdop from "./common/Backdrop";
 import LoginRegisterLink from "./LoginRegisterLink";
 
 const SideDrawer = (props) => {
@@ -16,7 +16,7 @@ const SideDrawer = (props) => {
   }
   return (
     <div className="sm:hidden">
-      <Backdop show={props.open} clicked={props.closed} />
+      <Backrdop show={props.open} clicked={props.closed} />
       <div className={classes}>
         <Logo />
         <nav>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Backdop = ({ show, clicked }) => {
+const Backdrop = ({ show, clicked }) => {
   return show ? (
     <div
       onClick={clicked}
@@ -9,4 +9,4 @@ const Backdop = ({ show, clicked }) => {
   ) : null;
 };
 
-export default Backdop;
+export default Backdrop;

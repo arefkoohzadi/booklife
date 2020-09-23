@@ -3,8 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import httpRequest from "../../api/axios-books";
 import { addStatus } from "../../store/actions/book";
 import useStatus from "../../hooks/useStatus";
+import Alert from "../Alert";
 
 const DropDown = ({ bookId }) => {
+  const [authRequire, setAuthRequire] = useState(null);
   const userId = useSelector((state) => state.auth.userId);
   const token = useSelector((state) => state.auth.token);
   const books = useSelector((state) => state.book.books);
@@ -12,7 +14,15 @@ const DropDown = ({ bookId }) => {
   const dispatch = useDispatch();
   const status = useStatus(bookId, userId);
 
+  const handleClose = () => {
+    setAuthRequire(false);
+  };
+
   const selectHandler = (item) => {
+    if (!token) {
+      setAuthRequire(true);
+      return;
+    }
     const book = books.find((book) => book.id === bookId);
     const url = `/books/${bookId}/.json?auth=${token}`;
     const data = {
@@ -75,6 +85,16 @@ const DropDown = ({ bookId }) => {
             خواندم
           </span>
         </div>
+      )}
+      {!!authRequire && (
+        <Alert
+          cancelTitle="انصراف"
+          okTitle="ورود"
+          okLink="/login"
+          subject="وارد حسابتان شوید"
+          description="برای فعالیت در سایت باید وارد حساب کاربری خود بشوید!"
+          close={handleClose}
+        />
       )}
     </div>
   );

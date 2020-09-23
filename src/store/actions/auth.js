@@ -4,6 +4,7 @@ export const AUTH_START = "AUTH_START";
 export const AUTH_SUCCESS = "AUTH_SUCCESS";
 export const AUTH_FAIL = "AUTH_FAIL";
 export const AUTH_LOGOUT = "AUTH_LOGOUT";
+export const AUTH_ERROR_TO_NULL = "AUTH_ERROR_TO_NULL";
 
 export const authStart = () => {
   return {
@@ -23,6 +24,11 @@ export const authFail = (error) => {
   return {
     type: AUTH_FAIL,
     error,
+  };
+};
+export const authErorToNull = () => {
+  return {
+    type: AUTH_ERROR_TO_NULL,
   };
 };
 
@@ -68,8 +74,10 @@ export const auth = (email, password, isSignup) => {
         dispatch(authSuccess(res.data.idToken, res.data.localId));
         dispatch(checkAuthTimeout(res.data.expiresIn));
       })
-      .catch((error) => {
-        dispatch(authFail(error));
+      .catch((err) => {
+        if (!!err.response) {
+          dispatch(authFail(err.response.data.error));
+        }
       });
   };
 };
