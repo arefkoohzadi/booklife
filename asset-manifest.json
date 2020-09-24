@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/booklife/static/css/main.25e0990a.chunk.css",
+    "main.js": "/booklife/static/js/main.e742cced.chunk.js",
+    "main.js.map": "/booklife/static/js/main.e742cced.chunk.js.map",
+    "runtime-main.js": "/booklife/static/js/runtime-main.f06fa8a3.js",
+    "runtime-main.js.map": "/booklife/static/js/runtime-main.f06fa8a3.js.map",
+    "static/css/2.f4bde6ca.chunk.css": "/booklife/static/css/2.f4bde6ca.chunk.css",
+    "static/js/2.ed40258b.chunk.js": "/booklife/static/js/2.ed40258b.chunk.js",
+    "static/js/2.ed40258b.chunk.js.map": "/booklife/static/js/2.ed40258b.chunk.js.map",
+    "static/js/3.3d7a270b.chunk.js": "/booklife/static/js/3.3d7a270b.chunk.js",
+    "static/js/3.3d7a270b.chunk.js.map": "/booklife/static/js/3.3d7a270b.chunk.js.map",
+    "static/js/4.d4981eb6.chunk.js": "/booklife/static/js/4.d4981eb6.chunk.js",
+    "static/js/4.d4981eb6.chunk.js.map": "/booklife/static/js/4.d4981eb6.chunk.js.map",
+    "index.html": "/booklife/index.html",
+    "precache-manifest.dec164f88ee9b4dbefff8c373f0329d5.js": "/booklife/precache-manifest.dec164f88ee9b4dbefff8c373f0329d5.js",
+    "service-worker.js": "/booklife/service-worker.js",
+    "static/css/2.f4bde6ca.chunk.css.map": "/booklife/static/css/2.f4bde6ca.chunk.css.map",
+    "static/css/main.25e0990a.chunk.css.map": "/booklife/static/css/main.25e0990a.chunk.css.map",
+    "static/js/2.ed40258b.chunk.js.LICENSE.txt": "/booklife/static/js/2.ed40258b.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/booklife/static/media/IRANSansWeb_Medium.9c66b762.woff2",
+    "static/media/cover.gif": "/booklife/static/media/cover.5f0682a6.gif",
+    "static/media/photo.jpg": "/booklife/static/media/photo.a0023002.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f06fa8a3.js",
+    "static/css/2.f4bde6ca.chunk.css",
+    "static/js/2.ed40258b.chunk.js",
+    "static/css/main.25e0990a.chunk.css",
+    "static/js/main.e742cced.chunk.js"
+  ]
+}
