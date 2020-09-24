@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/booklife/static/css/main.25e0990a.chunk.css",
-    "main.js": "/booklife/static/js/main.e742cced.chunk.js",
-    "main.js.map": "/booklife/static/js/main.e742cced.chunk.js.map",
+    "main.js": "/booklife/static/js/main.5514210c.chunk.js",
+    "main.js.map": "/booklife/static/js/main.5514210c.chunk.js.map",
     "runtime-main.js": "/booklife/static/js/runtime-main.f06fa8a3.js",
     "runtime-main.js.map": "/booklife/static/js/runtime-main.f06fa8a3.js.map",
     "static/css/2.f4bde6ca.chunk.css": "/booklife/static/css/2.f4bde6ca.chunk.css",
@@ -13,7 +13,7 @@
     "static/js/4.d4981eb6.chunk.js": "/booklife/static/js/4.d4981eb6.chunk.js",
     "static/js/4.d4981eb6.chunk.js.map": "/booklife/static/js/4.d4981eb6.chunk.js.map",
     "index.html": "/booklife/index.html",
-    "precache-manifest.dec164f88ee9b4dbefff8c373f0329d5.js": "/booklife/precache-manifest.dec164f88ee9b4dbefff8c373f0329d5.js",
+    "precache-manifest.114575f72b9940b8afa5da46bebfa39e.js": "/booklife/precache-manifest.114575f72b9940b8afa5da46bebfa39e.js",
     "service-worker.js": "/booklife/service-worker.js",
     "static/css/2.f4bde6ca.chunk.css.map": "/booklife/static/css/2.f4bde6ca.chunk.css.map",
     "static/css/main.25e0990a.chunk.css.map": "/booklife/static/css/main.25e0990a.chunk.css.map",
@@ -27,6 +27,6 @@
     "static/css/2.f4bde6ca.chunk.css",
     "static/js/2.ed40258b.chunk.js",
     "static/css/main.25e0990a.chunk.css",
-    "static/js/main.e742cced.chunk.js"
+    "static/js/main.5514210c.chunk.js"
   ]
 }

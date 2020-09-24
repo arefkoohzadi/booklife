@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8048dd6695111924e74e95caf1769a80",
+    "revision": "cc83e2892f94cf9a9bf4c693f1afdc75",
     "url": "/booklife/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/booklife/static/css/2.f4bde6ca.chunk.css"
   },
   {
-    "revision": "fa0eb85386c966a94fe2",
+    "revision": "dd55403c68d7283241d7",
     "url": "/booklife/static/css/main.25e0990a.chunk.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/booklife/static/js/4.d4981eb6.chunk.js"
   },
   {
-    "revision": "fa0eb85386c966a94fe2",
-    "url": "/booklife/static/js/main.e742cced.chunk.js"
+    "revision": "dd55403c68d7283241d7",
+    "url": "/booklife/static/js/main.5514210c.chunk.js"
   },
   {
     "revision": "6dcb5ba9269183a845f4",
